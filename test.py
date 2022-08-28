@@ -29,7 +29,10 @@ if __name__ =="__main__":
     play_note(0, 64, track, 1)
 
     mid.tracks.append(track)
-    os.remove("test.mid")
+    try:
+        os.remove("test.mid")
+    except FileNotFoundError:
+        pass
     mid.save("test.mid")
 
 
